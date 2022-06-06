@@ -6,11 +6,12 @@ const startBtn = document.querySelector("button[data-start]");
 const stopBtn = document.querySelector("button[data-stop]");
 
 stopBtn.setAttribute("disabled", "disabled");
+let changeBodyColorInterval = null;
 
 function startedToChangeBodyColor() {
     startBtn.setAttribute("disabled", "disabled");
     stopBtn.removeAttribute("disabled");
-    return changeBodyColorInterval = setInterval(() => {
+    changeBodyColorInterval = setInterval(() => {
     document.body.style.backgroundColor = `${getRandomHexColor()}`
   }, 1000);
 };
